@@ -97,6 +97,19 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <image>
+                        <name>ghcr.io/vrnsky/cloud-native-book</name>
+                        <publish>true</publish>
+                    </image>
+                    <docker>
+                        <publishRegistry>
+                            <username>vrnsky</username>
+                            <password>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</password>
+                            <url>ghcr.io</url>
+                        </publishRegistry>
+                    </docker>
+                </configuration>
             </plugin>
         </plugins>
     </build>
