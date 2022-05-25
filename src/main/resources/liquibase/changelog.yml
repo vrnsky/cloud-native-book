@@ -1,1 +1,14 @@
-#TODO add publisher
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+         username: postgres
+  - changeSet:
+      id: 1
+      author: vrnsky
+      changes:
+        - addColumn:
+            tableName: book
+            columns:
+              - column:
+                  name: publisher
+                  type: varchar(255)

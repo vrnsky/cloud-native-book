@@ -20,8 +20,8 @@ public class BookDataLoader {
 
     @EventListener(ApplicationReadyEvent.class)
     public void loadBookTestData() {
-        var book1 = Book.build("1231231230", "Northern Lights", "Lira Sylvertongue", 9.90);
-        var book2 = Book.build("1231231232", "Polar Journey", "Iorek Polarson", 12.90);
+        var book1 = Book.build("1231231230", "Northern Lights", "Lira Sylvertongue", "Testpublisher", 9.90);
+        var book2 = Book.build("1231231232", "Polar Journey", "Iorek Polarson", "Testpublisher", 12.90);
         bookRepository.saveAll(List.of(book1, book2));
     }
 }
