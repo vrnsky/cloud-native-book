@@ -56,7 +56,7 @@ jobs:
           java-version: 17
       - name: Build container image
         run: |
-          mvn spring-boot:build-image -Dspring-boot.build-image.imageName=${{ env.REGISTRY }}/$ {{ env.IMAGE_NAME }}:${{ env.VERSION }} -Dspring-boot.build-image.publish=true
+          mvn spring-boot:build-image -Dspring-boot.build-image.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -Dspring-boot.build-image.publish=true
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
