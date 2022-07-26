@@ -1,6 +1,17 @@
+server:
+  port: 9091
+  shutdown: graceful
+  tomcat:
+    connection-timeout: 2s
+    keep-alive-timeout: 15s
+    threads:
+      max: 50
+      min-spare: 5
 spring:
   application:
     name: catalog-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
   config:
     import: "optional:configserver:"
   cloud:
@@ -17,16 +28,17 @@ spring:
   datasource:
     username: postgres
     password: 55555
-    url: jdbc:postgresql://localhost:5432/polardb_catalog
+    url: jdbc:postgresql://localhost:5432/polardb
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 5
-  sql:
-    init:
-      mode: always
   liquibase:
-    change-log: classpath:liquibase/changelog.yml
+    change-log: classpath:db/db.changelog-master.yaml
     enabled: true
+    default-schema: public
+logging:
+  level:
+    liquibase: DEBUG
 
 polar:
   greeting: Welcome to the local book catalog!

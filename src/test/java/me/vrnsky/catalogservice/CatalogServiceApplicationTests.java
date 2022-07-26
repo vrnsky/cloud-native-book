@@ -19,7 +19,7 @@ class CatalogServiceApplicationTests {
 
     @Test
     void whenPostRequestCreateANewBook() {
-        var book = Book.build("1231231230", "Title", "Author", "TestPublisher", 9.90);
+        var book = Book.build("1231231230", "Title", "Author", 9.90);
 
         webTestClient
                 .post()

@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create a book table
+      author: vrnsky
+      changes:
+        - createTable:
+            tableName: book
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: author
+                  type: varchar(255)
+              - column:
+                  name: isbn
+                  type: varchar(255)
+              - column:
+                  name: price
+                  type: float8
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: created_date
+                  type: timestamp
+              - column:
+                  name: last_modified_date
+                  type: timestamp
+              - column:
+                  name: version
+                  type: integer

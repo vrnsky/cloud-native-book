@@ -1,9 +1,6 @@
 databaseChangeLog:
-  - preConditions:
-      - runningAs:
-         username: postgres
   - changeSet:
-      id: 1
+      id: Add publisher column to the book table
       author: vrnsky
       changes:
         - addColumn:
@@ -11,4 +8,4 @@ databaseChangeLog:
             columns:
               - column:
                   name: publisher
-                  type: varchar(255)
+                  type: varchar(50)
